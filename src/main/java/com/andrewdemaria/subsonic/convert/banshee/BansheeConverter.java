@@ -16,6 +16,7 @@ public class BansheeConverter implements Converter {
 	public void convert_database( Connection source, Connection destination ) {
 		System.out.println("Converting");
 		new DisplayTable("CorePlaylists").doSQL(source);
+        new DisplayTable("MEDIA_FILE").doSQL(destination);
 	}
 
 }

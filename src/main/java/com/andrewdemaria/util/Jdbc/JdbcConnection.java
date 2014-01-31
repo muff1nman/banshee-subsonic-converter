@@ -10,9 +10,9 @@ import java.sql.DriverManager;
  * Time: 9:10 PM
  */
 public abstract class JdbcConnection {
-	abstract public Connection initConnection(String location);
+	abstract public Connection initConnection();
 
-	public void finishConn(Connection conn) {
+	static public void finishConn(Connection conn) {
 		try {
 			conn.close();
 		} catch ( Exception e) {

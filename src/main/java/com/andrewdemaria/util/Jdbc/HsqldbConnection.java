@@ -1,30 +1,25 @@
 package com.andrewdemaria.util.Jdbc;
 
-import java.io.File;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 /**
- * Created with IntelliJ IDEA.
- * User: andrew
- * Date: 1/30/14
- * Time: 9:19 PM
+ * Created by andrew on 1/31/14.
  */
-public class SqliteConnection extends JdbcConnection {
+public class HsqldbConnection extends JdbcConnection {
 
     private String location;
 
-    public SqliteConnection(String location) {
+    public HsqldbConnection(String location) {
         this.location = location;
     }
 
 	@Override
 	public Connection initConnection() {
 		try {
-			Class.forName("org.sqlite.JDBC");
+			Class.forName("org.hsqldb.jdbc.JDBCDriver");
 			Connection conn;
-			conn = DriverManager.getConnection( "jdbc:sqlite:" + location);
+			conn = DriverManager.getConnection("jdbc:hsqldb:" + location + ";user=sa;ifexists=true");
 			conn.setAutoCommit(false);
 			return conn;
 		} catch (Exception e ) {
@@ -32,4 +27,5 @@ public class SqliteConnection extends JdbcConnection {
 			throw new SQLException( e.getMessage() );
 		}
 	}
+
 }

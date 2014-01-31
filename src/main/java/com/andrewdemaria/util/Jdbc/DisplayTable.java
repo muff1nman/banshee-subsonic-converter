@@ -76,6 +76,7 @@ public class DisplayTable extends SQLFunction {
 
 			rs.close();
 		} catch( java.sql.SQLException e ) {
+            e.printStackTrace();
 			throw new SQLException();
 		}
     }
