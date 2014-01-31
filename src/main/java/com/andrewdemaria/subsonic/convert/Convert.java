@@ -1,14 +1,14 @@
-/*
- * Convert.java
- * Copyright (C) 2014 Andrew DeMaria (muff1nman) <ademaria@mines.edu>
- *
- * All Rights Reserved.
+package com.andrewdemaria.subsonic.convert;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: andrew
+ * Date: 1/30/14
+ * Time: 3:45 PM
  */
-
-public interface Convert {
-
-	public void convert_database( File database_in, File database_out );
-
+public class Convert {
+	public static void main(String[] args) {
+		System.out.println("Welcome to the subsonic library converter");
+		System.out.println("converting");
+	}
 }
-
-
